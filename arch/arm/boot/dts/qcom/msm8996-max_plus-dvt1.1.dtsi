@@ -12,8 +12,10 @@
 
 #include "msm8996-mtp.dtsi"
 #include "msm8996-pinctrl-max_plus.dtsi"
+
 #include "dsi-panel-sharp-dualmipi-cmd.dtsi"
 #include "dsi-panel-sharp-dualmipi-video.dtsi"
+
 #include "letv-tp-atmel_mxt_ts.dtsi"
 #include "msm8996-camera-sensor-maxplus-dvt1.1.dtsi"
 
@@ -36,6 +38,7 @@
 	qcom,platform-reset-gpio = <&tlmm 24 0>;
 	/delete-property/ qcom,platform-bklight-en-gpio;
 };
+
 
 &lab_regulator {
 	qcom,qpnp-lab-init-lcd-voltage = <5900000>;
@@ -108,6 +111,7 @@
 		22 1e 07 08 04 03 04 a0
 		23 17 06 08 05 03 04 a0];
 };
+
 
 &usb_otg_switch {
 	status = "disabled";
@@ -435,7 +439,7 @@
 /{
 	mtp_batterydata: qcom,battery-data {
 		qcom,batt-id-range-pct = <15>;
-		#include "batterydata-max-plus-3395mah.dtsi"
+		#include "batterydata-max-plus-4000mah.dtsi"
 	};
 };
 

@@ -50,7 +50,7 @@
 		qcom,mdss-dsi-t-clk-post = <0x0d>;
 		qcom,mdss-dsi-t-clk-pre = <0x2d>;
 		qcom,mdss-dsi-bl-max-level = <4095>;
-		qcom,mdss-brightness-max-level = <255>;
+		qcom,mdss-brightness-max-level = <4095>;
 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
 		qcom,mdss-dsi-mdp-trigger = "none";
 		qcom,mdss-dsi-te-pin-select = <1>;
@@ -59,33 +59,29 @@
 		qcom,mdss-dsi-te-dcs-command = <1>;
 		qcom,mdss-dsi-te-check-enable;
 		qcom,mdss-dsi-te-using-te-pin;
-		//qcom,ulps-enabled;
-		qcom,dcs-cmd-by-left;
-		qcom,mdss-dsi-on-command = [05 01 00 00 0a 00 01 00
-					/* Soft reset, wait 10ms */
+		qcom,ulps-enabled;
+		qcom,mdss-dsi-on-command = [
+					05 01 00 00 0a 00 01 00              /* Soft reset, wait 10ms */
 					23 01 00 00 00 00 02 b0 00
 					23 01 00 00 00 00 02 d6 01
-					23 01 00 00 00 00 02 b3 00
-					/* C1 SET */
-					//29 01 00 00 0a 00 24 C1 0C 61 00 5F 90 FF 51 02 FF 7F C6 5A FB BF 35 C6 3E 7C 41 FD FF CB F8 00 00 00 00 00 02 00 22 00 03 FF 51
-					05 01 00 00 20 00 01 29
-					/* Set display on, wait 2 frames*/
-					05 01 00 00 78 00 01 11
-					/* exit sleep mode, wait 120ms */
-					15 01 00 00 00 00 02 35 00
-					/* Set tear on */
-					39 01 00 00 00 00 05 2a 00 00 05 9f
-					/* Set Column address (0-1439) */
-					23 01 00 00 00 00 02 b0 03
-					/* MCAP */
-					//15 01 00 00 0a 00 02 51 ff
-					/* write display brightness 100% */
-					15 01 00 00 0a 00 02 53 0c];
+					23 01 00 00 00 00 02 b3 00          /* C1 SET */
+					
+					05 01 00 00 20 00 01 29      /* Set display on, wait 2 frames*/
+					05 01 00 00 78 00 01 11      /* exit sleep mode, wait 120ms */
+					15 01 00 00 00 00 02 35 00   /* Set tear on */
+					
+					39 01 00 00 00 00 05 2a 00 00 05 9f    /* Set Column address (0-1439) */
+					
+					23 01 00 00 00 00 02 b0 03           /* MCAP */
+					//15 01 00 00 0a 00 02 51 ff           /* write display brightness 100% */
+					15 01 00 00 0a 00 02 53 0c         /* write control brightness */
+					];
+					
 					/* write control brightness */
 		qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
 		qcom,mdss-dsi-off-command = [05 01 00 00 32 00 02 28 00
 					05 01 00 00 78 00 02 10 00];
 		qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
-		//qcom,mdss-tear-check-sync-cfg-height = <2580>;
+		qcom,mdss-tear-check-sync-cfg-height = <2580>;
 	};
 };

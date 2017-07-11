@@ -4811,12 +4811,12 @@ static int mxt_probe(struct i2c_client *client,
 	if(data->info->family_id == 0xA4 && data->info->variant_id == 0x02){
 		data->is_support_esd = true;
 		data->is_support_ups = true;
-		dev_dbg(&data->client->dev, "Find le_x2,le_x10\n");
+		dev_dbg(&data->client->dev, "Find le_x2,le_x10,le_xp\n");
 	}
 	else if(data->info->family_id == 0xA4 && data->info->variant_id == 0x2F){
 		data->is_support_esd = true;
 		data->is_support_ups = true;
-		dev_dbg(&data->client->dev, "Find le_x5\n");
+		dev_dbg(&data->client->dev, "Find le_x5,le_xp\n");
 	}
 	else if(data->info->family_id == 0xA6 && data->info->variant_id == 0x01){
 		data->is_support_esd = false;

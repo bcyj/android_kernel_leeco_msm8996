@@ -9,7 +9,15 @@ config PRODUCT_LE_X2
 	---help---
 	  This option is meant to be selected automatically by AndroidKernel.mk.
 	  Once selected, X2 specific configs/code will take effect.
-
+	 
+config PRODUCT_LE_XP
+	bool "Product set to LE XP"
+	default n
+	---help---
+	  This option is meant to be selected automatically by AndroidKernel.mk.
+	  Once selected, XP specific configs/code will take effect.
+	  
+	  
 config PRODUCT_LE_ZL1
 	bool "Product set to LE ZL1"
 	select SND_SOC_WCD_MBHC_ZL1
