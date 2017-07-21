@@ -1944,6 +1944,7 @@
 };
 
 /* Halo HL7509 external buck that powers VDD_GFX supply on 8996AU boards */
+/*
 &i2c_7 {
 	hl7509_vreg: hl7509-regulator@68 {
 		compatible = "halo,hl7509";
@@ -1957,3 +1958,4 @@
 		status = "disabled";
 	};
 };
+*/

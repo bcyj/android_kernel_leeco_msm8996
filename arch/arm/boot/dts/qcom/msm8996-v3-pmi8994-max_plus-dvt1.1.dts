@@ -20,4 +20,6 @@
 	model = "Letv Technologies, Inc. MSM 8996 v3 + PMI8994 MAX_PLUS-DVT1.1";
 	compatible = "qcom,msm8996-mtp", "qcom,msm8996", "qcom,mtp";
 	qcom,board-id = <8 0x13>;
+
+
 };
